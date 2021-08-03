@@ -1,0 +1,43 @@
+package com.qa.setup_02;
+
+import static org.junit.Assert.assertEquals;
+
+import java.time.Duration;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+
+import com.qa.setup_02.pages.AcmeHomePageNoPageFactory;
+import com.qa.setup_02.pages.AcmeLoginPageNoPageFactory;
+import com.qa.setup_02.test_utilities.ScreenshotManager;
+
+public class PomTestExamples {
+
+	private WebDriver driver;
+	private ScreenshotManager screenshotManager;
+	
+	private AcmeLoginPageNoPageFactory acmeLoginPageNoPageFactory;
+
+	@Before
+	public void setup() throws Exception {
+		System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
+
+		driver = WebDriverFactory.getDriver();
+		screenshotManager = new ScreenshotManager();
+		
+		acmeLoginPageNoPageFactory = new AcmeLoginPageNoPageFactory(driver);
+
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+	}
+	
+	
+	
+	@After
+	public void teardown() {
+		driver.quit();
+	}
+}

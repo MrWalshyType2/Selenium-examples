@@ -1,0 +1,5 @@
+package com.qa.setup_02.pages;
+
+public class AcmeLoginPageWithPageFactory {
+
+}
