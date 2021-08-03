@@ -1,2 +1,0 @@
-INDEX VERSION 1.131+C:\Users\morga\OneDrive\Documents\QA\selenium-examples\.metadata\.plugins\org.eclipse.jdt.core
-4088832729.index
