@@ -8,6 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class WebDriverFactory {
 	
 	public static WebDriver getDriver() throws Exception {
+		// passed to the sys using mvn -Dbrowser=vendor
 		String webDriver = System.getProperty("browser", "chrome");
 		
 		switch (webDriver.toUpperCase()) {
